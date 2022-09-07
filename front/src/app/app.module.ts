@@ -9,12 +9,17 @@ import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
 import { HttpClientModule } from '@angular/common/http';
+import {InputTextModule} from 'primeng/inputtext';
+import {ToggleButtonModule} from 'primeng/togglebutton';
+import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContaFormComponent } from './views/conta/conta-form/conta-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContaListComponent
+    ContaListComponent,
+    ContaFormComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     ButtonModule,
     DialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    InputTextModule,
+    ToggleButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

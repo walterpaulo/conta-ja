@@ -13,6 +13,7 @@ export class ContaListComponent implements OnInit {
   @Input('status') status: boolean = true;
   display: boolean = false;
   acao: string = '';
+  checked: boolean = false;
 
   ngOnInit(): void {
     this.getContas(this.status ? 'true' : 'false');
@@ -21,7 +22,7 @@ export class ContaListComponent implements OnInit {
 
   showDialog() {
     this.display = true;
-    console.log(this.display);
+    setInterval(() => (this.display = false), 1000);
   }
 
   getContas(status: string) {
