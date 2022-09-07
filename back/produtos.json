@@ -1,0 +1,25 @@
+{
+  "Contas": [
+    {
+      "id": 3,
+      "name": "Água",
+      "price": 100.00,
+      "status": true,
+      "dataPagamento": 
+    },
+    {
+      "name": "Luz",
+      "price": 94.00,
+      "status": false,
+      "id": 4,
+      "dataPagamento": 
+    },
+    {
+      "name": "Gás",
+      "price": 120.00,
+      "status": false,
+      "id": 5,
+      "dataPagamento": 
+    }
+  ]
+}
