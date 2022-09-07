@@ -2,80 +2,19 @@
   "Contas": [
     {
       "name": "Queijo",
-      "price": "2220",
+      "price": "20",
       "status": true,
       "dataCriacao": "2022-09-07T18:34:22.889Z",
       "id": 1,
       "dataPagamento": "2022-09-07T18:34:31.485Z"
     },
     {
-      "name": "queijo",
+      "name": "Teclado",
+      "price": "110",
       "status": true,
       "dataCriacao": "2022-09-07T18:35:34.109Z",
       "id": 2,
       "dataPagamento": "2022-09-07T18:35:47.467Z"
-    },
-    {
-      "name": "fdfdf",
-      "price": "333",
-      "status": true,
-      "dataCriacao": "2022-09-07T18:36:34.410Z",
-      "id": 3,
-      "dataPagamento": "2022-09-07T18:36:36.065Z"
-    },
-    {
-      "name": "3",
-      "price": 3434343,
-      "status": true,
-      "dataCriacao": "2022-09-07T18:42:21.349Z",
-      "id": 4,
-      "dataPagamento": "2022-09-07T18:45:33.110Z"
-    },
-    {
-      "name": "wdfdf",
-      "price": 33434,
-      "status": true,
-      "dataCriacao": "2022-09-07T18:44:11.408Z",
-      "id": 5,
-      "dataPagamento": "2022-09-07T18:57:45.689Z"
-    },
-    {
-      "name": "wfdfdfdfdf",
-      "price": 334,
-      "status": true,
-      "dataCriacao": "2022-09-07T18:48:14.985Z",
-      "id": 6
-    },
-    {
-      "name": "pagar",
-      "price": 34343,
-      "status": true,
-      "dataCriacao": "2022-09-07T18:51:22.161Z",
-      "dataPagamento": "2022-09-07T18:51:22.161Z",
-      "id": 7
-    },
-    {
-      "name": "walter",
-      "price": 34343,
-      "status": true,
-      "dataCriacao": "2022-09-07T18:52:07.807Z",
-      "dataPagamento": "2022-09-07T18:52:07.807Z",
-      "id": 8
-    },
-    {
-      "name": "teste",
-      "price": 3343,
-      "status": true,
-      "dataCriacao": "2022-09-07T18:52:37.839Z",
-      "id": 9,
-      "dataPagamento": "2022-09-07T19:34:19.910Z"
-    },
-    {
-      "name": "fdfddffdf",
-      "status": true,
-      "dataCriacao": "2022-09-07T19:46:14.469Z",
-      "id": 10,
-      "dataPagamento": "2022-09-07T19:46:17.860Z"
     }
   ]
 }

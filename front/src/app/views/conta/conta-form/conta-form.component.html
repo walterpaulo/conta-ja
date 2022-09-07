@@ -20,35 +20,37 @@
         pInputText
       />
       <label for="float-input">Digite o nome da conta</label>
-      <small
-        id="username2-help"
-        class="p-error block"
-        *ngIf="!fb.get('name')?.valid"
+      <small class="p-error block" *ngIf="!fb.get('name')?.valid"
         >Nome é obrigatório.</small
       >
     </span>
-    <h5>Valor</h5>
-    <span class="p-float-label">
-      <p-inputNumber
-        [(ngModel)]="conta.price"
-        mode="decimal"
-        [minFractionDigits]="2"
-        formControlName="price"
-        class="field-max"
-      ></p-inputNumber>
-      <label for="float-input">Digite o valor</label>
-    </span>
-    <h5>Pago</h5>
-    <span class="p-float-label">
-      <p-toggleButton
-        [(ngModel)]="checked"
-        title="Conta Paga?"
-        onIcon="pi pi-check"
-        offIcon="pi pi-times"
-        formControlName="status"
-      ></p-toggleButton>
-    </span>
-
+    <div class="box-form">
+      <div>
+        <h5>Valor</h5>
+        <span class="p-float-label">
+          <p-inputNumber
+            [(ngModel)]="conta.price"
+            mode="decimal"
+            [minFractionDigits]="2"
+            formControlName="price"
+            class="field-max"
+          ></p-inputNumber>
+          <label for="float-input">Digite o valor</label>
+        </span>
+      </div>
+      <div>
+        <h5>Pago</h5>
+        <span class="p-float-label">
+          <p-toggleButton
+            [(ngModel)]="checked"
+            title="Conta Paga?"
+            onIcon="pi pi-check"
+            offIcon="pi pi-times"
+            formControlName="status"
+          ></p-toggleButton>
+        </span>
+      </div>
+    </div>
     <ng-template pTemplate="footer">
       <p-button
         icon="pi pi-check"

@@ -1,13 +1,21 @@
-<p-tabView>
-  <p-tabPanel header="Conta Aberta">
-    <div id="table-all">
-      <app-conta-list [status]="false"></app-conta-list>
-    </div>
-  </p-tabPanel>
-  <p-tabPanel header="Histórico">
-    <div id="table-all">
-      <app-conta-list></app-conta-list>
-    </div>
-    </p-tabPanel>
-</p-tabView>
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="box">
+    <p-tabView>
+      <p-tabPanel header="Conta Aberta">
+        <div id="table-all">
+          <app-conta-list [status]="false"></app-conta-list>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Histórico">
+        <div id="table-all">
+          <app-conta-list></app-conta-list>
+        </div>
+      </p-tabPanel>
+    </p-tabView>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div class="footer">
+  © 2022. Website Designed by
+  <a href="https://www.walterpaulo.com.br" target="_black">Walter Paulo</a>
+</div>

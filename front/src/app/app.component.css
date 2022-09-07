@@ -1,5 +1,21 @@
-#table-all{
+#table-all {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.footer {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  margin-left: -50px;
+  color: var(--surface-600);
+}
+
+.footer > a {
+  border-style: none;
 }
