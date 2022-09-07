@@ -6,6 +6,7 @@
     [draggable]="false"
     [style]="{ width: '50vw' }"
     [resizable]="false"
+    [modal]="true"
   >
     <h5>Nome</h5>
     <span class="p-float-label">
@@ -52,9 +53,8 @@
       <p-button
         icon="pi pi-check"
         (click)="save()"
-        label="Ok"
-        styleClass="p-button-text"
-        *ngIf="fb.valid"
+        label="Salvar"
+        [disabled]="!fb.valid"
       ></p-button>
     </ng-template>
   </p-dialog>

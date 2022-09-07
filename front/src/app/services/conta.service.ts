@@ -19,12 +19,17 @@ export class ContaService {
   };
 
   getConta(status: String = 'true'): Observable<Conta[]> {
+    var order =
+      status == 'true'
+        ? '&_sort=dataPagamento&_order=desc'
+        : '&_sort=dataCriacao&_order=desc';
     return this.httpClient
-      .get<Conta[]>(environment.apihost + `/contas?status=` + status)
+      .get<Conta[]>(environment.apihost + `/contas?status=` + status + order)
       .pipe(retry(2), catchError(this.handleError));
   }
 
   save(conta: Conta): Observable<Conta> {
+    conta.price = conta.price ? conta.price : 0;
     conta.dataCriacao = new Date();
     if (conta.status == true) {
       conta.dataPagamento = conta.dataCriacao;
@@ -39,7 +44,7 @@ export class ContaService {
   }
 
   update(conta: Conta): Observable<Conta> {
-    debugger;
+    conta.price = conta.price ? conta.price : 0;
     conta.dataPagamento = new Date();
     conta.status = true;
     return this.httpClient
