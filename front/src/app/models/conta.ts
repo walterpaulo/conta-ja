@@ -4,4 +4,5 @@ export interface Conta {
   price?: number;
   status?: boolean;
   dataPagamento?: Date;
+  dataCriacao?: Date;
 }

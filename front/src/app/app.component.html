@@ -1,9 +1,13 @@
 <p-tabView>
   <p-tabPanel header="Conta Aberta">
-    <app-conta-list [status]="false"></app-conta-list>
+    <div id="table">
+      <app-conta-list [status]="false"></app-conta-list>
+    </div>
   </p-tabPanel>
   <p-tabPanel header="Histórico">
-    <app-conta-list></app-conta-list>
-  </p-tabPanel>
+    <div id="table-all">
+      <app-conta-list></app-conta-list>
+    </div>
+    </p-tabPanel>
 </p-tabView>
 <router-outlet></router-outlet>

@@ -13,6 +13,7 @@ export class ContaFormComponent implements OnInit {
   display: boolean = false;
   @Input('showdisplay') showdisplay: boolean = true;
   conta = {} as Conta;
+  position: string = 'top';
 
   constructor(
     private contaService: ContaService,
@@ -27,22 +28,33 @@ export class ContaFormComponent implements OnInit {
 
   ngOnDestroy() {}
 
-  fb = this.formBuild.group({
-  name: [null, Validators.required],
-  price: [0.0, Validators.required],
-  status: [false]
-  })
+  fb = this.formBuild.group<any>({
+    name: ['', Validators.required],
+    price: [0.0],
+    status: [false],
+  });
 
   showDialog() {
     this.display = true;
+    this.position = 'top';
   }
 
   save() {
-    if(this.fb.status == 'VALID'){
-      console.log('salvar');
-
+    this.fb.get('status')?.setValue(this.checked ? true : false);
+    if (this.fb.status == 'VALID') {
+      console.log(this.fb.value);
+      this.contaService.save(this.fb.value).subscribe(() => {
+        console.log('Alterado com sucesso!');
+        this.cleanForm();
+      });
+      window.location.href = '/';
+      this.display = false;
     }
-    // this.display = false;
-    console.log('erro');
+  }
+
+  cleanForm() {
+    this.fb.get('name')?.setValue(''),
+      this.fb.get('price')?.setValue(0),
+      (this.conta = {} as Conta);
   }
 }

@@ -14,6 +14,9 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContaFormComponent } from './views/conta/conta-form/conta-form.component';
+import {InputNumberModule} from 'primeng/inputnumber';
+import {ToastModule} from 'primeng/toast';
+import {IMaskModule} from 'angular-imask';
 
 @NgModule({
   declarations: [AppComponent, ContaListComponent, ContaFormComponent],
@@ -30,6 +33,9 @@ import { ContaFormComponent } from './views/conta/conta-form/conta-form.componen
     ToggleButtonModule,
     FormsModule,
     ReactiveFormsModule,
+    IMaskModule,
+    ToastModule,
+    InputNumberModule
   ],
   providers: [],
   bootstrap: [AppComponent],

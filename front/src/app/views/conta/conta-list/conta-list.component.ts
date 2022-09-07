@@ -11,6 +11,7 @@ export class ContaListComponent implements OnInit {
   constructor(private contaService: ContaService) {}
   contas: Conta[] = [];
   @Input('status') status: boolean = true;
+  @Input('atualizarList') atualizarList: boolean = false;
   display: boolean = false;
   acao: string = '';
   checked: boolean = false;
@@ -19,6 +20,9 @@ export class ContaListComponent implements OnInit {
     this.getContas(this.status ? 'true' : 'false');
     this.acao = this.status ? 'Data de Pagamento' : 'Controle';
   }
+  // ngDoCheck() {
+  //   this.atualizarList && this.getContas('true');
+  // }
 
   showDialog() {
     this.display = true;
@@ -29,5 +33,16 @@ export class ContaListComponent implements OnInit {
     this.contaService
       .getConta(status)
       .subscribe((listContas: Conta[]) => (this.contas = listContas));
+  }
+
+  pagar(conta: Conta) {
+    if (conta.id !== undefined) {
+      console.log(conta);
+      debugger
+      this.contaService.update(conta).subscribe(() => {
+        console.log('Alterado com sucesso!');
+      });
+      window.location.href = '/';
+    }
   }
 }
