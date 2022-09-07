@@ -1,4 +1,7 @@
+import { Conta } from './../../../models/conta';
+import { ContaService } from './../../../services/conta.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-conta-form',
@@ -9,25 +12,37 @@ export class ContaFormComponent implements OnInit {
   checked: boolean = false;
   display: boolean = false;
   @Input('showdisplay') showdisplay: boolean = true;
-  constructor() {}
+  conta = {} as Conta;
+
+  constructor(
+    private contaService: ContaService,
+    private formBuild: FormBuilder
+  ) {}
 
   ngOnInit(): void {}
 
   ngDoCheck() {
-    console.log('oi');
     this.showdisplay && this.showDialog();
   }
 
   ngOnDestroy() {}
+
+  fb = this.formBuild.group({
+  name: [null, Validators.required],
+  price: [0.0, Validators.required],
+  status: [false]
+  })
 
   showDialog() {
     this.display = true;
   }
 
   save() {
-    this.ngOnDestroy();
-    console.log('salvar');
-    this.display = false;
-    console.log(this.display);
+    if(this.fb.status == 'VALID'){
+      console.log('salvar');
+
+    }
+    // this.display = false;
+    console.log('erro');
   }
 }

@@ -1,20 +1,22 @@
-<p-dialog header="Nova Conta" [(visible)]="display" [style]="{width: '50vw'}" [draggable]="false" [resizable]="false">
-  <h5>Nome</h5>
+<form [formGroup]="fb" (ngSubmit)="save()">
+  <p-dialog header="Nova Conta" [(visible)]="display" [style]="{width: '50vw'}" [draggable]="false" [resizable]="false">
+    <h5>Nome</h5>
     <span class="p-float-label">
-        <input id="float-input" type="text" class="field-max" pInputText>
+        <input id="float-input" type="text" title="Nome de Conta" class="field-max" formControlName="name" [ngModel]="conta.name" pInputText>
         <label for="float-input">Digite o nome da conta</label>
     </span>
     <h5>Valor</h5>
     <span class="p-float-label">
-      <input id="float-input" type="text" class="field-max" pInputText>
+      <input id="float-input" type="text" title="Valor da Conta" mask="a*-999-a999" class="field-max" formControlName="price" [ngModel]="conta.price" pInputText>
       <label for="float-input">Digite o valor</label>
-  </span>
-  <h5>Pago</h5>
+    </span>
+    <h5>Pago</h5>
     <span class="p-float-label">
-      <p-toggleButton [(ngModel)]="checked" onIcon="pi pi-check" offIcon="pi pi-times"></p-toggleButton>
+      <p-toggleButton [(ngModel)]="conta.status" title="Conta Paga?" onIcon="pi pi-check" offIcon="pi pi-times" formControlName="status"></p-toggleButton>
     </span>
 
-  <ng-template pTemplate="footer">
-      <p-button icon="pi pi-check" (click)="save()" label="Ok" styleClass="p-button-text"></p-button>
-  </ng-template>
-</p-dialog>
+    <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="save()" label="Ok" styleClass="p-button-text"></p-button>
+    </ng-template>
+  </p-dialog>
+</form>

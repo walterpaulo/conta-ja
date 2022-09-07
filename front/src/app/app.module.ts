@@ -4,23 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {TabViewModule} from 'primeng/tabview';
-import {TableModule} from 'primeng/table';
-import {ButtonModule} from 'primeng/button';
-import {DialogModule} from 'primeng/dialog';
+import { TabViewModule } from 'primeng/tabview';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
 import { HttpClientModule } from '@angular/common/http';
-import {InputTextModule} from 'primeng/inputtext';
-import {ToggleButtonModule} from 'primeng/togglebutton';
-import {FormsModule} from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContaFormComponent } from './views/conta/conta-form/conta-form.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ContaListComponent,
-    ContaFormComponent
-  ],
+  declarations: [AppComponent, ContaListComponent, ContaFormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,9 +28,10 @@ import { ContaFormComponent } from './views/conta/conta-form/conta-form.componen
     BrowserAnimationsModule,
     InputTextModule,
     ToggleButtonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
