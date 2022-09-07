@@ -1,0 +1,36 @@
+<!-- <button pButton type="button" (click)="showDialog()" icon="pi pi-plus-circle" iconPos="right"></button> -->
+<p-button (click)="showDialog()" icon="pi pi-plus-circle" label=""></p-button>
+<p-table [value]="contas" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Código</th>
+          <th>Nome</th>
+          <th>Preço</th>
+          <!-- <th>{{contas[0]?.status ? 'Data de Pagamento' : 'Controle'}}</th> -->
+          <th>{{acao}}</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-conta>
+      <tr>
+          <td>{{conta.id}}</td>
+          <td>{{conta.name}}</td>
+          <td>{{conta.price}}</td>
+          <td *ngIf="conta.status">{{conta.dataPagamento || '-'}}</td>
+          <td *ngIf="!conta.status"><button pButton type="button" label="Pagar" ></button></td>
+      </tr>
+  </ng-template>
+</p-table>
+
+
+<p-dialog header="Title" [(visible)]="display" [style]="{width: '50vw'}">
+  Content
+</p-dialog>
+<p-dialog header="Header" [(visible)]="display" [style]="{width: '50vw'}">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <ng-template pTemplate="footer">
+      <p-button icon="pi pi-check" (click)="display=false" label="Ok" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>
