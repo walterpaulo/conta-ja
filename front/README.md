@@ -31,4 +31,5 @@ ng build --watch --configuration development
 ng test
 ```
 ![api-back](./src/assets/conta%20JA.png)
-![api-back](./src/assets/contaJA.gif)
+![api-front](./src/assets/contaJA.gif)
+[Video](https://youtu.be/qnXomTVtSBM)
