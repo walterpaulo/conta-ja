@@ -45,3 +45,5 @@ Cria um arquivo .json, db.json, coloque o nome tabela em formato Json:
 }
 
 ```
+
+![api Json serve](./img/API-WALTER%20PAULO%20-%20%23api.png)
