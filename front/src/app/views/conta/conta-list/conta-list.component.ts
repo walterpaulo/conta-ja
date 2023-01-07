@@ -38,7 +38,6 @@ export class ContaListComponent implements OnInit {
   pagar(conta: Conta) {
     if (conta.id !== undefined) {
       console.log(conta);
-      debugger
       this.contaService.update(conta).subscribe(() => {
         console.log('Alterado com sucesso!');
       });

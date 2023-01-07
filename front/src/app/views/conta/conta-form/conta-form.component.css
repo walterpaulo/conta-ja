@@ -1,11 +1,42 @@
-.field-max {
-  width: 100%;
-}
 .box-form{
   display: flex;
-  flex-direction: row;
   justify-content: baseline;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  font-size: 1.1rem;
 }
+
+.box-input{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.box-input-max{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.status{
+  width: 27%;
+  height: 40px;
+}
+.status  p-togglebutton{
+  width: 100%;
+  margin-left: 33px;
+}
+
+.box-input-max > label, .box-input > label {
+  margin-bottom: 8px;
+}
+.p-dialog .p-dialog-header {
+    border-bottom: 0 none;
+    background: #ffffff;
+    color: #343a40;
+    padding: 0.5rem 1.5rem !important;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+

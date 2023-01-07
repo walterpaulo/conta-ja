@@ -1,63 +1,25 @@
 <form [formGroup]="fb" (ngSubmit)="save()">
-  <p-dialog
-    header="Nova Conta"
-    [(visible)]="display"
-    [position]="position"
-    [draggable]="false"
-    [style]="{ width: '50vw' }"
-    [resizable]="false"
-    [modal]="true"
-  >
-    <h5>Nome</h5>
-    <span class="p-float-label">
-      <input
-        id="float-input"
-        type="text"
-        title="Nome de Conta"
-        class="field-max"
-        formControlName="name"
-        [ngModel]="conta.name"
-        pInputText
-      />
-      <label for="float-input">Digite o nome da conta</label>
-      <small class="p-error block" *ngIf="!fb.get('name')?.valid"
-        >Nome é obrigatório.</small
-      >
-    </span>
+  <p-dialog header="Nova Conta" [(visible)]="display" [position]="position" [draggable]="false"
+    [style]="{ width: '350px' }" [resizable]="false" [modal]="true">
     <div class="box-form">
-      <div>
-        <h5>Valor</h5>
-        <span class="p-float-label">
-          <p-inputNumber
-            [(ngModel)]="conta.price"
-            mode="decimal"
-            [minFractionDigits]="2"
-            formControlName="price"
-            class="field-max"
-          ></p-inputNumber>
-          <label for="float-input">Digite o valor</label>
-        </span>
+      <div class="box-input-max">
+        <Label>Nome</Label>
+        <input id="float-input" style="width: 100%; height: '40px';" type="text" title="Nome de Conta" formControlName="name" [ngModel]="conta.name"
+        pInputText />
       </div>
-      <div>
-        <h5>Pago</h5>
-        <span class="p-float-label">
-          <p-toggleButton
-            [(ngModel)]="checked"
-            title="Conta Paga?"
-            onIcon="pi pi-check"
-            offIcon="pi pi-times"
-            formControlName="status"
-          ></p-toggleButton>
-        </span>
+      <div class="box-input">
+        <Label>Valor</Label>
+        <p-inputNumber [(ngModel)]="conta.price" mode="decimal" [minFractionDigits]="2" formControlName="price"
+        style="height: '40px';"></p-inputNumber>
+      </div>
+      <div class="box-input status">
+        <Label style="text-align: right; padding-right: 4px;">Pago</Label>
+        <p-toggleButton  [(ngModel)]="checked" title="Conta Paga?" style="width: 30px; !important" onIcon="pi pi-check" offIcon="pi pi-times"
+        formControlName="status"></p-toggleButton>
       </div>
     </div>
-    <ng-template pTemplate="footer">
-      <p-button
-        icon="pi pi-check"
-        (click)="save()"
-        label="Salvar"
-        [disabled]="!fb.valid"
-      ></p-button>
-    </ng-template>
+      <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="save()" label="Salvar" [disabled]="!fb.valid"></p-button>
+      </ng-template>
   </p-dialog>
 </form>
