@@ -4,17 +4,17 @@
     <div class="box-form">
       <div class="box-input-max">
         <Label>Nome</Label>
-        <input id="float-input" style="width: 100%; height: '40px';" type="text" title="Nome de Conta" formControlName="name" [ngModel]="conta.name"
+        <input id="float-input" style="width: 100%; height: 40px;" type="text" title="Nome de Conta" formControlName="name" [ngModel]="conta.name"
         pInputText />
       </div>
       <div class="box-input">
         <Label>Valor</Label>
         <p-inputNumber [(ngModel)]="conta.price" mode="decimal" [minFractionDigits]="2" formControlName="price"
-        style="height: '40px';"></p-inputNumber>
+        style="height: 40px;"></p-inputNumber>
       </div>
       <div class="box-input status">
         <Label style="text-align: right; padding-right: 4px;">Pago</Label>
-        <p-toggleButton  [(ngModel)]="checked" title="Conta Paga?" style="width: 30px; !important" onIcon="pi pi-check" offIcon="pi pi-times"
+        <p-toggleButton  [(ngModel)]="checked" title="Conta Paga?" style="width: 30px" onIcon="pi pi-check" offIcon="pi pi-times"
         formControlName="status"></p-toggleButton>
       </div>
     </div>

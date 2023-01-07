@@ -37,7 +37,6 @@
         {{ conta.dataPagamento | date: "dd/MM/yyy H:mm" }}
       </td>
       <td style="min-width: 200px" *ngIf="!conta.status">
-        <p-toast></p-toast>
         <button
         pButton
         type="button"
